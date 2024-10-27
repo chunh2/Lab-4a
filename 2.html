@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="userInput" placeholder="Enter a number" />
+    <button onClick="checkInput()">Check</button>
+    <script>
+      //using arrow function syntax
+      const checkInput = () => {
+        //select input using id
+        const userInput = document.querySelector("#userInput");
+
+        //obtain the input value
+        let value = userInput.value;
+
+        if (value === "") {
+          alert("It is empty");
+        } else {
+          //convert it to number because the input value is always data type of string
+          value = Number(value);
+
+          if (isNaN(value)) {
+            alert("Please insert a number!");
+          } else {
+            if (value < 10) {
+              alert("The number is lower than 10");
+            } else if (value > 10) {
+              alert("The number is higher than 10");
+            } else {
+              alert("The number is equal to 10");
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
